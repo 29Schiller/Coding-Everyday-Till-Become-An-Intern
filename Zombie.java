@@ -4,15 +4,17 @@ public class Zombie extends Actor {
     private int limit;
     private long lastAttack;
     private double attackWaitingTime;
+    private int lane;
 
 
-    public Zombie(int x, int y, int speed,int health, int damage, long lastAttack, double attackWaitingTime) {
+    public Zombie(int x, int y, int speed,int health, int damage, long lastAttack, double attackWaitingTime; int lane) {
         super( x, y, speed);
         this.health = health;
         this.damage = damage;
         this.lastAttack = 0;
         limit=150;
         this.attackWaitingTime = attackWaitingTime;
+        this.lane = lane;
     }
 
     @Override
