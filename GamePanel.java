@@ -1,15 +1,23 @@
-import javax.swing.ImageIcon;
+package Screnes;
 import javax.swing.JPanel;
 import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.Graphics2D;
+import java.awt.Toolkit;
 public class GamePanel extends JPanel implements Runnable{
     private Thread thread;
     private Boolean isRunning;
-    private Image background;
+    private Toolkit t = Toolkit.getDefaultToolkit();
+    Background bg=new Background(this);
 
-    public void paint(Graphics g2){
-        background = new ImageIcon("D:/Code/OOP/Lab Class/lab/Project/Map_1.jpg").getImage();
-        g2.drawImage(background, 0, 0, getWidth(), getHeight(), this);
+    public GamePanel(){
+    }
+
+    //Draw
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
+        bg.render(g2);
     }
     public void startgame(){
         if(thread==null){
@@ -18,6 +26,7 @@ public class GamePanel extends JPanel implements Runnable{
             thread.start();
         }
     }
+
     @Override
     public void run(){
         long FPS=60;
