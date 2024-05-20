@@ -1,12 +1,15 @@
-package Screnes;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+
+import java.awt.event.*;// Example
+import javax.swing.JPanel;// Example
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
-import Graphics.GamePanel;
-
-public class GameFrame extends JFrame {
+public class GameFrame extends JFrame implements MouseListener {
     public static final int SCREEN_WIDTH = 1300;
     public static final int SCREEN_HEIGHT = 750;
     GamePanel gamePanel;
@@ -20,6 +23,8 @@ public class GameFrame extends JFrame {
         gamePanel = new GamePanel();
         gameLoop = new GameLoop();
         add(gamePanel);
+
+
     }
 
     public static int getScreenWidth() {

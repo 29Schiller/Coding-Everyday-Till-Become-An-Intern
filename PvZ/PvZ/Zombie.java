@@ -10,7 +10,6 @@ public class Zombie {
 
 
     public Zombie(int x, int y, int speed,int health, int damage, long lastAttack, double attackWaitingTime, int lane) {
-        super( x, y, speed);
         this.health = health;
         this.damage = damage;
         this.lastAttack = 0;
@@ -19,11 +18,7 @@ public class Zombie {
         this.lane = lane;
     }
 
-    @Override
     public void act() {
-        if(x>limit){
-            setX(speed);
-        }
     }
 
     public int getDamage() {

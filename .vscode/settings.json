@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "PvZ",
+        "gui"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}

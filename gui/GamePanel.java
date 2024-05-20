@@ -1,4 +1,3 @@
-package Graphics;
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
@@ -8,6 +7,7 @@ public class GamePanel extends JPanel {
     Background bg = new Background(this);
 
     public GamePanel() {
+
     }
 
     @Override
