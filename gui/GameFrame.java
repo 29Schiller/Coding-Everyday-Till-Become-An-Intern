@@ -1,10 +1,7 @@
-
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 
 public class GameFrame extends JFrame {
     public static final int SCREEN_WIDTH = 1300;
@@ -20,8 +17,6 @@ public class GameFrame extends JFrame {
         gamePanel = new GamePanel();
         gameLoop = new GameLoop();
         add(gamePanel);
-
-
     }
 
     public static int getScreenWidth() {

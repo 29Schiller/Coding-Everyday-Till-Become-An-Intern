@@ -1,5 +1,3 @@
-
-
 public class GameLoop implements Runnable {
     private Boolean isRunning;
     private final long FPS = 60;
@@ -17,7 +15,6 @@ public class GameLoop implements Runnable {
     public void run() {
         long beginTime;
         long sleepTime;
-
         beginTime = System.nanoTime();
         while (isRunning) {
             long deltaTime = System.nanoTime() - beginTime;

@@ -1,13 +1,11 @@
-
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 public class GamePanel extends JPanel {
     Background bg = new Background(this);
-
+    
     public GamePanel() {
-
     }
 
     @Override
