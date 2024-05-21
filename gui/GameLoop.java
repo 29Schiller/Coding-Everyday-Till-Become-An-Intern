@@ -1,4 +1,4 @@
-package Screnes;
+
 
 public class GameLoop implements Runnable {
     private Boolean isRunning;
@@ -17,6 +17,7 @@ public class GameLoop implements Runnable {
     public void run() {
         long beginTime;
         long sleepTime;
+
         beginTime = System.nanoTime();
         while (isRunning) {
             long deltaTime = System.nanoTime() - beginTime;
