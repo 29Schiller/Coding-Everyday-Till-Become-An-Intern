@@ -1,4 +1,5 @@
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -9,7 +10,7 @@ import javax.swing.JLabel;
 public class GameFrame extends JFrame {
     public static final int SCREEN_WIDTH = 1300;
     public static final int SCREEN_HEIGHT = 750;
-    GamePanel gamePanel;
+    Exam1_HCMIU gamePanel;
     GameLoop gameLoop;
 
     public GameFrame() {
@@ -17,9 +18,11 @@ public class GameFrame extends JFrame {
         Dimension dimension = toolkit.getScreenSize();
         this.setBounds((dimension.width - SCREEN_WIDTH) / 2, (dimension.height - SCREEN_HEIGHT) / 2, SCREEN_WIDTH, SCREEN_HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gamePanel = new GamePanel();
+        
+        gamePanel = new Exam1_HCMIU();
         gameLoop = new GameLoop();
-        add(gamePanel);
+        Component Exam1_HCMIU;
+        add(Exam1_HCMIU);
 
 
     }

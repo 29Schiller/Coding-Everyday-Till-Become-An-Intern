@@ -1,108 +1,41 @@
-package gui;
+import java.awt.*
+;
 
-import org.lwjgl.input.Mouse;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.BasicGameState;
-import org.newdawn.slick.state.StateBasedGame;
+import javax.swing.ImageIcon;
+public class Exam1_HCMIU {
+	public final Component panel = null;
 
-import com.SSound;
-
-/**
- * 
- * @author Nguyen Phan Hung Thuan + Nguyen Thanh Xuan Tung
- *
- */
-public class SplashScreen extends BasicGameState {
-	
-	// Declare variable
-	private Image background;
-	public Image logo;
-	public Image playButton;
-	
-	/**
-	 * Create splash screen
-	 * @param state	State index
-	 */
-	public SplashScreen(int state) {
-		SSound.play("res/Sound/theme/main_theme.ogg", false, 1f, 1f);
+	//Import Background Scene
+	public void showMenuState(){
+	ImageIcon Menubackground = new ImageIcon("res/wallpaper.jpg");
+	Menubackground.draw();
 	}
 	
-	// Initialization
-	/**
-	 * Initialize SplashScreen state
-	 */
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		gc.getGraphics().setAntiAlias(PZGUI.isAA());
-
-		background = new Image("res/wallpaper.jpg");
-		logo = new Image("res/pvz_logo.png");
-		playButton = new Image("res/Button/PlayDemo.png");
-
-		System.out.println("SplashScreen Init complete");
-		System.out.println("Wid: " + PZGUI.getWidth());
-		System.out.println("Hei: " + PZGUI.getHeight());
-	}
-
-	// Start Button
-	public void startButton(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		float rate = 0.9f;
-		float width = playButton.getWidth() * PZGUI.getResolutionRateWidth() * rate;
-		float height = playButton.getHeight() * PZGUI.getResolutionRateHeight() * rate;
-		
-		float posX = PZGUI.getWidth()  /2 - width/2;
-		float posY = PZGUI.getHeight() * (float)(0.7) - height/2;
-		
-		float edgeX = posX + width;
-		float edgeY = posY + height;
-
-		playButton.draw(posX, posY, width, height);
-		if (	Mouse.getX() >= posX && 
-				Mouse.getX() <= edgeX && 
-				PZGUI.getHeight() - Mouse.getY() >= posY	&& 
-				PZGUI.getHeight() - Mouse.getY() <= edgeY) {
-			playButton.draw(posX, posY, width, height, new Color(100, 100, 100, 60));
-			
-			if (Mouse.isButtonDown(0))
-				sbg.enterState(1);
-		}
-	}
-
-	// BackGround
-	public void showBackGround() throws SlickException {
-		background.draw(0, 0, PZGUI.getWidth(), PZGUI.getHeight());
-	}
-
-	// Game Logo
-	public void showLogo() throws SlickException {
+	public void showTitle(){
+		ImageIcon Title = new ImageIcon("res/pvz_logo.png");
 		float rate = (float) 0.7;
-		float width = logo.getWidth() * PZGUI.getResolutionRateWidth() * rate;
-		float height = logo.getHeight() * PZGUI.getResolutionRateHeight() * rate;
-		float posX = PZGUI.getWidth()/2 - width/2;
-		float posY = PZGUI.getHeight()*(float)(0.2) - height/2;
+		float width = Title.getIconWidth() * GameFrame.SCREEN_WIDTH * rate;
+		float height = Title.getIconHeight() * GameFrame.SCREEN_HEIGHT * rate;
+		float posX = 1300/2 - width/2;
+		float posY = 750*(float)(0.2) - height/2;
 
-		logo.draw(posX, posY, width, height);
-	}
-	
-	// Render
-	/**
-	 * SplashScreen render
-	 */
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		g.setAntiAlias(PZGUI.isAA());
-		showBackGround();
-		showLogo();
-		startButton(gc, sbg, g);
-		//DebugTool.showMousePosition(g);
-	}	
-	
-	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+		Title.draw();
+		}
+
+	//Import Button Start
+	public void showButton(){
+		ImageIcon Start = new ImageIcon("res/PlayDemo.png");
+		float rate = 0.9f;
+		float width = Start.getIconWidth() * GameFrame.SCREEN_WIDTH * rate;
+		float height = Start.getIconHeight() * GameFrame.SCREEN_HEIGHT * rate;
+		
+		float posX = 1300  /2 - width/2;
+		float posY = 750 * (float)(0.7) - height/2;
+
+		
+		Start.draw(posX, posY, width, height);
 	}
 
-	public int getID() {
-		return 0;
-	}
+	//Import Theme Sound
+
 }
