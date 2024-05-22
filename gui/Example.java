@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Example {
+
+    /* Test sample
     // Create a JPanel to hold the images
     private JPanel panel;
 
@@ -11,7 +13,7 @@ public class Example {
         JLabel backgroundLabel = new JLabel(menuBackground);
         panel.add(backgroundLabel);
     }
-    /* 
+     
     public void showTitle() {
         ImageIcon title = new ImageIcon("res/pvz_logo.png");
         float rate = (float) 0.7;
@@ -25,8 +27,7 @@ public class Example {
         titleLabel.setBounds((int) posX, (int) posY, (int) width, (int) height);
         panel.add(titleLabel);
     }
-    */
-    /*
+    
     // Import Button Start
     public void showButton() {
         ImageIcon start = new ImageIcon("res/PlayDemo.png");
@@ -42,7 +43,7 @@ public class Example {
         startLabel.setBounds((int) posX, (int) posY, (int) width, (int) height);
         panel.add(startLabel);
     }
-     */
+    
     // Import Theme Sound
 
     // Create a constructor to initialize the panel
@@ -55,14 +56,43 @@ public class Example {
         // showTitle();
         //showButton();
     }
+    */
+
 
 
     // Create a main method to display the panel in a JFrame
     public static void main(String[] args) {
-        Example exam = new Example();
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(exam.panel);
-        frame.setVisible(true);
+        
+        JFrame windowFrame = new JFrame();
+        Container con = new Container();
+        JPanel picturPanel = new JPanel();
+        JLabel pictLabel = new JLabel();
+        ImageIcon background = new ImageIcon("res/wallpaper.jpg");
+        ImageIcon title = new ImageIcon("res/wallpaper.jpg");
+        ImageIcon playbutton = new ImageIcon("res/pvz_logo.png");
+
+        //Set Window Frame
+        windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        windowFrame.setSize(1600,750);
+        windowFrame.setVisible(true);
+        windowFrame.setLayout(null);
+        windowFrame.getContentPane().setBackground(Color.black);
+        con = windowFrame.getContentPane();
+
+        //Scaling image to fit in the Jlabel
+        Image picturescalImage = playbutton.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(picturescalImage);
+
+        //Set Picture Panel
+        picturPanel.setBounds(0,0,1600,750);
+        picturPanel.setBackground(Color.blue);
+        con.add(picturPanel);
+
+        //Set Picture label
+        pictLabel.setIcon(scaledIcon);
+        picturPanel.add(pictLabel);
+
+        System.out.println(playbutton.getIconWidth());
+        System.out.println(playbutton.getIconHeight());
     }
 }
