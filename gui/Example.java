@@ -66,32 +66,43 @@ public class Example {
         JFrame windowFrame = new JFrame();
         Container con = new Container();
         JPanel picturPanel = new JPanel();
-        JLabel pictLabel = new JLabel();
+
         ImageIcon background = new ImageIcon("res/wallpaper.jpg");
-        ImageIcon title = new ImageIcon("res/wallpaper.jpg");
-        ImageIcon playbutton = new ImageIcon("res/pvz_logo.png");
+        ImageIcon title = new ImageIcon("res/pvz_logo.png");
+        ImageIcon playbutton = new ImageIcon("res/Button/PlayDemo.png");
 
         //Set Window Frame
         windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         windowFrame.setSize(1600,750);
         windowFrame.setVisible(true);
         windowFrame.setLayout(null);
-        windowFrame.getContentPane().setBackground(Color.black);
-        con = windowFrame.getContentPane();
+        windowFrame.add(picturPanel);
 
-        //Scaling image to fit in the Jlabel
-        Image picturescalImage = playbutton.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(picturescalImage);
+        //Scaling image to fit in the JPael
+        Image backgroundscalImage = background.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaled_backgrounIcon = new ImageIcon(backgroundscalImage);
+
+        Image titlImage = title.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaled_titleIcon = new ImageIcon(titlImage);
+
+        Image butImage = playbutton.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaled_butIcon = new ImageIcon(butImage);
+
+        //Label 1
+        JLabel label1 = new JLabel();
+        label1.setIcon(scaled_backgrounIcon);
+        JLabel label2 = new JLabel();
+        label2.setIcon(scaled_titleIcon);
+        JLabel label3 = new JLabel();
+        label3.setIcon(scaled_butIcon);
 
         //Set Picture Panel
         picturPanel.setBounds(0,0,1600,750);
         picturPanel.setBackground(Color.blue);
-        con.add(picturPanel);
-
-        //Set Picture label
-        pictLabel.setIcon(scaledIcon);
-        picturPanel.add(pictLabel);
-
+        picturPanel.add(label1);
+        picturPanel.add(label2);
+        picturPanel.add(label3);
+        
         System.out.println(playbutton.getIconWidth());
         System.out.println(playbutton.getIconHeight());
     }
