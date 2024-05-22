@@ -11,12 +11,12 @@ public class Example {
         JLabel backgroundLabel = new JLabel(menuBackground);
         panel.add(backgroundLabel);
     }
-
+    /* 
     public void showTitle() {
         ImageIcon title = new ImageIcon("res/pvz_logo.png");
         float rate = (float) 0.7;
-        float width = title.getIconWidth() * GameFrame.SCREEN_WIDTH * rate;
-        float height = title.getIconHeight() * GameFrame.SCREEN_HEIGHT * rate;
+        float width = title.getIconWidth() * 1600 * rate;
+        float height = title.getIconHeight() * 900 * rate;
         float posX = 1300 / 2 - width / 2;
         float posY = 750 * (float) (0.2) - height / 2;
 
@@ -25,13 +25,14 @@ public class Example {
         titleLabel.setBounds((int) posX, (int) posY, (int) width, (int) height);
         panel.add(titleLabel);
     }
-
+    */
+    /*
     // Import Button Start
     public void showButton() {
         ImageIcon start = new ImageIcon("res/PlayDemo.png");
         float rate = 0.9f;
-        float width = start.getIconWidth() * GameFrame.SCREEN_WIDTH * rate;
-        float height = start.getIconHeight() * GameFrame.SCREEN_HEIGHT * rate;
+        float width = start.getIconWidth() * 1600 * rate;
+        float height = start.getIconHeight() * 900 * rate;
 
         float posX = 1300 / 2 - width / 2;
         float posY = 750 * (float) (0.7) - height / 2;
@@ -41,7 +42,7 @@ public class Example {
         startLabel.setBounds((int) posX, (int) posY, (int) width, (int) height);
         panel.add(startLabel);
     }
-
+     */
     // Import Theme Sound
 
     // Create a constructor to initialize the panel
@@ -49,13 +50,13 @@ public class Example {
         panel = new JPanel();
         System.out.println("Panel: " + panel);
         panel.setLayout(null);
-        panel.setPreferredSize(new Dimension(1300, 750));
+        panel.setPreferredSize(new Dimension(1600, 900));
         showMenuState();
-        showTitle();
-        showButton();
+        // showTitle();
+        //showButton();
     }
 
-    // Create a main method to
+
     // Create a main method to display the panel in a JFrame
     public static void main(String[] args) {
         Example exam = new Example();

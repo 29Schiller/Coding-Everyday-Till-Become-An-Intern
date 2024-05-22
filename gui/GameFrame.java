@@ -22,14 +22,10 @@ public class GameFrame extends JFrame {
         
         gamePanel = new Exam1_HCMIU();
         gameLoop = new GameLoop();
-<<<<<<< HEAD
         Component Exam1_HCMIU;
         add(Exam1_HCMIU);
 
 
-=======
-        add(gamePanel);
->>>>>>> c4fd7cb19fbb9c888c3a135a60ca636002898b7b
     }
 
     public static int getScreenWidth() {
