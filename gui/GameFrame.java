@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 import java.awt.Component;
-=======
->>>>>>> c4fd7cb19fbb9c888c3a135a60ca636002898b7b
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;

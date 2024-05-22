@@ -95,7 +95,7 @@ public class Example {
         label2.setIcon(scaled_titleIcon);
         JLabel label3 = new JLabel();
         label3.setIcon(scaled_butIcon);
-
+        
         //Set Picture Panel
         picturPanel.setBounds(0,0,1600,750);
         picturPanel.setBackground(Color.blue);
