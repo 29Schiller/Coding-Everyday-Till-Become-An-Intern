@@ -64,12 +64,11 @@ public class Example {
     public static void main(String[] args) {
         
         JFrame windowFrame = new JFrame();
-        Container con = new Container();
         JPanel picturPanel = new JPanel();
 
-        ImageIcon background = new ImageIcon("res/wallpaper.jpg");
-        ImageIcon title = new ImageIcon("res/pvz_logo.png");
-        ImageIcon playbutton = new ImageIcon("res/Button/PlayDemo.png");
+        Image background = new Image("res/wallpaper.jpg");
+        Image title = new Image("res/pvz_logo.png");
+        Image playbutton = new Image("res/Button/PlayDemo.png");
 
         //Set Window Frame
         windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,23 +78,18 @@ public class Example {
         windowFrame.add(picturPanel);
 
         //Scaling image to fit in the JPael
-        Image backgroundscalImage = background.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaled_backgrounIcon = new ImageIcon(backgroundscalImage);
-
-        Image titlImage = title.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaled_titleIcon = new ImageIcon(titlImage);
-
-        Image butImage = playbutton.getImage().getScaledInstance(windowFrame.getWidth(), windowFrame.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaled_butIcon = new ImageIcon(butImage);
+        
 
         //Label 1
         JLabel label1 = new JLabel();
         label1.setIcon(scaled_backgrounIcon);
         JLabel label2 = new JLabel();
         label2.setIcon(scaled_titleIcon);
+        label2.setBounds(picturPanel.getWidth()/2 - title.getIconWidth()/2, picturPanel.getHeight()/2 - title.getIconHeight()/2, title.getIconWidth(), title.getIconHeight());
         JLabel label3 = new JLabel();
         label3.setIcon(scaled_butIcon);
-        
+        label3.setBounds(picturPanel.getWidth()/2 - playbutton.getIconWidth()/2, picturPanel.getHeight() - playbutton.getIconHeight() - 50, playbutton.getIconWidth(), playbutton.getIconHeight());
+            
         //Set Picture Panel
         picturPanel.setBounds(0,0,1600,750);
         picturPanel.setBackground(Color.blue);
