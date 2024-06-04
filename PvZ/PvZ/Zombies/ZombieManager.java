@@ -5,7 +5,8 @@ import java.util.Random;
 import PvZ.Plants.Plants;
 public class ZombieManager {
     Plants plants;
-    Random random=new Random();
+    static Random random=new Random();
+    private static int level=random.nextInt(5)+1;
     private ArrayList<Zombie> zombieList= new ArrayList<>();
     private ArrayList<Zombie> zombieRemove=new ArrayList<>();
     private static int CountZombie=0;
@@ -66,5 +67,8 @@ public class ZombieManager {
     }
     public static void setCountZombie(int countZombie) {
         CountZombie = countZombie;
+    }
+    public static int getLevel() {
+        return level;
     }
 }

@@ -22,7 +22,7 @@ public class GamePanel extends JPanel {
     private OptionPlants optionPlants;
     private LawnManager lawnManager;
     Background bg = new Background(this);
-
+    Random random=new Random();
     public GamePanel() {
         setDoubleBuffered(true);
         sunDrop = new SunDrop();
@@ -98,11 +98,38 @@ public class GamePanel extends JPanel {
         timers.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if (ZombieManager.getCountZombie() <= 30) {
-                    zombieManager.SpawnZombie();
+                if(ZombieManager.getLevel()==1){
+                    if (ZombieManager.getCountZombie() <= 10) {
+                        zombieManager.SpawnZombie();
+                    }
                 }
+                if(ZombieManager.getLevel()==2){
+                    if (ZombieManager.getCountZombie() <= 20) {
+                        zombieManager.SpawnZombie();
+                    }
+                }
+                if(ZombieManager.getLevel()==3){
+                    if (ZombieManager.getCountZombie() <= 30) {
+                        zombieManager.SpawnZombie();
+                    }
+                }
+                if(ZombieManager.getLevel()==4){
+                    if (ZombieManager.getCountZombie() <= 40) {
+                        zombieManager.SpawnZombie();
+                    }
+                }
+                if(ZombieManager.getLevel()==5){
+                    if (ZombieManager.getCountZombie() <= 50) {
+                        zombieManager.SpawnZombie();
+                    }
+                }
+                if(ZombieManager.getLevel()==6){
+                    if (ZombieManager.getCountZombie() <= 60) {
+                        zombieManager.SpawnZombie();
+                    }
+                }                    
                 repaint();
-            }
+        }
         }, 0, new Random().nextInt(5000) + 2000);
 
         Timer movetimers = new Timer();
@@ -130,14 +157,12 @@ public class GamePanel extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         bg.render(g2);
-
         for (Sun sun : sunDrop.SunList()) {
             sun.render(g2);
         }
         plantsManager.render(g2, zombieManager.ZombieList(), sunDrop);
         lawnManager.render(g2);
         sunDrop.drawStorage(g2);
-        // Sao chép danh sách zombieList để tránh ConcurrentModificationException
         synchronized (zombieManager.ZombieList()) {
             ArrayList<Zombie> zombiesCopy = new ArrayList<>(zombieManager.ZombieList());
             for (Zombie zombie : zombiesCopy) {
