@@ -1,0 +1,60 @@
+package PvZ.Plants;
+
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
+
+import javax.imageio.ImageIO;
+import PvZ.Zombies.Zombie;
+import Sun.Sun;
+import Sun.SunDrop;
+public class SunFlower extends Plants{
+    private int timeIndex=0;
+    private Image[] SunFlowerImage= new Image[30];
+    private ArrayList<Sun> sunList= new ArrayList<>();
+    Random random=new Random();
+    public SunFlower(int X, int row, boolean frozzen) {
+        super(X, row, frozzen);
+        setDamage(0);
+        setFrozzen(false);
+        setHP(100);
+        setPrice(50);
+        setTimeCDaction(10000);
+        importImage();
+    }
+
+    @Override
+    public void importImage() {
+        for (int i=0; i<SunFlowerImage.length;i++){
+            try {SunFlowerImage[i]= ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/SunFlower/"+(i+1)+".png"));
+            } catch (IOException e) {e.printStackTrace();}}
+    }
+
+    @Override
+public void Action(Zombie zombie, SunDrop sunDrop) {
+    long currentTime = System.currentTimeMillis();
+    if ((currentTime - getLastActionkTime()) >= getTimeCDaction()) {
+        setisAction(true);
+        setLastActionkTime(currentTime);
+        spawnSun(sunDrop);
+    }
+}
+public void spawnSun(SunDrop sunDrop) {
+    int start_X_Spawn = this.getX() + random.nextInt(50) - 50;
+    Sun sun = new Sun(start_X_Spawn, getY());
+    sunDrop.SunList().add(sun); 
+}
+@Override
+public void renderPlantsAction(Graphics2D g2, ArrayList<Zombie> zombieList) {
+    g2.drawImage(SunFlowerImage[timeIndex], getX() - 40, getY(), 70, 80, null);
+    timeIndex = (timeIndex + 1) % SunFlowerImage.length;
+    if (isAction()) {
+        for (Sun sun : sunList) {
+            sun.render(g2);
+        }
+    }
+}
+}

@@ -1,7 +1,10 @@
 {
+<<<<<<< Updated upstream
     "java.project.sourcePaths": [
         "PvZ",
         "gui"
     ],
+=======
+>>>>>>> Stashed changes
     "java.debug.settings.onBuildFailureProceed": true
 }
