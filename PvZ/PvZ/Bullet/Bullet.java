@@ -6,7 +6,7 @@ import PvZ.Zombies.Zombie;
 
 public class Bullet {
     private int x, y;
-    private int damage,speed = 8;
+    private int damage,speed = 4;
     private Image image;
     private boolean Collide=false;
     public Bullet(int x, int y,int damage, Image image) {
@@ -27,5 +27,5 @@ public class Bullet {
             zombie.setHP(zombie.getHP()-this.getDamage());}
     }
     public void render(Graphics2D g2) {
-        g2.drawImage(image, x, y+12,30,30 ,null);}
+        g2.drawImage(image, getX(), getY()+12,30,30 ,null);}
 }

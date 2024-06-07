@@ -17,7 +17,7 @@ public class SunDrop extends JPanel {
     private int EndY = 750 / 2;
     private Image storageImage;
     Random random = new Random();
-    private int sunscore=100;
+    private int sunscore=1000;
     public SunDrop() {
         try {
             this.storageImage = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Sun/SunCollected.png"));
@@ -37,12 +37,12 @@ public class SunDrop extends JPanel {
     public int getSunscore() {return sunscore;}
 
     public void setSunscore(int sunscore) {this.sunscore = sunscore;}
-    public void spawnSun() {
+    public synchronized void spawnSun() {
         startX = 400 + random.nextInt(800);
         startY = 50 + random.nextInt(250);
         SunList.add(new Sun(startX, startY));}
 
-    public void handleSunClick(int mouseX, int mouseY) {
+    public synchronized void handleSunClick(int mouseX, int mouseY) {
         for (Sun sun : SunList) {
             if (sun.getBounds().contains(mouseX, mouseY)) {
                 sunsToRemoveByClicked.add(sun);
@@ -52,7 +52,7 @@ public class SunDrop extends JPanel {
         repaint();
     }
 
-    public void sunMove() {
+    public synchronized void sunMove() {
         for (Sun sun : SunList) {
             if (sun.getY() < EndY) {
                 sun.setY(sun.getY() + 4);
@@ -66,8 +66,12 @@ public class SunDrop extends JPanel {
         }
         SunList.removeAll(sunsToRemoveByTime);
     }
-
-    public void drawStorage(Graphics g){
+    public synchronized void render(Graphics2D g2){
+        for(Sun sun:SunList){
+            sun.render(g2);
+        }
+    }
+    public synchronized void drawStorage(Graphics g){
         Graphics2D g2n = (Graphics2D) g;
         g.drawImage(storageImage, 10,20 ,100,65,null);
         Font font1=new Font("Time New Roman",Font.BOLD,18);

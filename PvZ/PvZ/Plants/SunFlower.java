@@ -5,14 +5,16 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
 import PvZ.Zombies.Zombie;
 import Sun.Sun;
 import Sun.SunDrop;
 public class SunFlower extends Plants{
     private int timeIndex=0;
+    private int frameDelay = 3;
+    private int frameCounter = 0;
     private Image[] SunFlowerImage= new Image[30];
     private ArrayList<Sun> sunList= new ArrayList<>();
     Random random=new Random();
@@ -48,9 +50,16 @@ public void spawnSun(SunDrop sunDrop) {
     sunDrop.SunList().add(sun); 
 }
 @Override
-public void renderPlantsAction(Graphics2D g2, ArrayList<Zombie> zombieList) {
-    g2.drawImage(SunFlowerImage[timeIndex], getX() - 40, getY(), 70, 80, null);
-    timeIndex = (timeIndex + 1) % SunFlowerImage.length;
+public void renderPlantsAction(Graphics2D g2, List<Zombie> zombieList) {
+    frameCounter++;
+        if (frameCounter >= frameDelay) {
+            frameCounter = 0;
+        g2.drawImage(SunFlowerImage[timeIndex], getX() +15, getY(), 70, 80, null);
+        timeIndex = (timeIndex + 1) % SunFlowerImage.length;
+        }
+        else{
+            g2.drawImage(SunFlowerImage[timeIndex], getX() +15, getY(), 70, 80, null);
+        }
     if (isAction()) {
         for (Sun sun : sunList) {
             sun.render(g2);

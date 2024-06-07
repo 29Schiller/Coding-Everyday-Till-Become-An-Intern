@@ -44,6 +44,7 @@ public abstract class Zombie {
     public int getHeight() {return height;}
     public long getLastAttackTime() {return lastAttackTime;}
     public void setLastAttackTime(long lastAttackTime) {this.lastAttackTime = lastAttackTime;}
+    public abstract boolean isDeadAnimationFinished();
     public abstract void move();
     public abstract void CollidePlants(Plants plants);
     public abstract void attack(Plants plants);

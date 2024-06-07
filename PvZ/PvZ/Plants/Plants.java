@@ -1,7 +1,6 @@
 package PvZ.Plants;
 import java.awt.*;
-import java.util.ArrayList;
-
+import java.util.List;
 import PvZ.Zombies.Zombie;
 import Sun.SunDrop;
 
@@ -44,5 +43,5 @@ public abstract class Plants {
     public void setLastActionkTime(long lastActionkTime) {this.lastActionkTime = lastActionkTime;}
     public abstract void importImage();
     public abstract void Action(Zombie zombie,SunDrop sunDrop);
-    public abstract void renderPlantsAction(Graphics2D g2,ArrayList<Zombie> zombieList);
+    public abstract void renderPlantsAction(Graphics2D g2,List<Zombie> zombieList);
 }

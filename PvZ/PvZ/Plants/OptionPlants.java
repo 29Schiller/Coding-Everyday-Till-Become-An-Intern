@@ -35,10 +35,8 @@ public class OptionPlants {
 
     public void importImage(){
         try {peaChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Peashooter.png"));
-        } catch (IOException e) {e.printStackTrace();}
-        try {wallNutChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Wallnut.png"));
-        } catch (IOException e) {e.printStackTrace();}
-        try {sunFlowerChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Sunflower.png"));
+            wallNutChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Wallnut.png"));
+            sunFlowerChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Sunflower.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
 
@@ -63,18 +61,18 @@ public class OptionPlants {
         else if (442 < mouseY && mouseY <= 551) row = 3;
         else if (551 < mouseY && mouseY <= 660) row = 4;
     
-        if (350 <= mouseX && mouseX <= 445) col = 0;
-        else if (445 < mouseX && mouseX <= 540) col = 1;
-        else if (540 < mouseX && mouseX <= 635) col = 2;
-        else if (635 < mouseX && mouseX <= 730) col = 3;
-        else if (730 < mouseX && mouseX <= 825) col = 4;
-        else if (825 < mouseX && mouseX <= 920) col = 5;
-        else if (920 < mouseX && mouseX <= 1015) col = 6;
-        else if (1015 < mouseX && mouseX <= 1110) col = 7;
-        else if (1110 < mouseX && mouseX <= 1205) col = 8;
+        if (345 <= mouseX && mouseX <= 435) col = 0;
+        else if (435 < mouseX && mouseX <= 525) col = 1;
+        else if (525 < mouseX && mouseX <= 615) col = 2;
+        else if (615 < mouseX && mouseX <= 705) col = 3;
+        else if (705 < mouseX && mouseX <= 795) col = 4;
+        else if (795 < mouseX && mouseX <= 885) col = 5;
+        else if (885 < mouseX && mouseX <= 975) col = 6;
+        else if (965 < mouseX && mouseX <= 1055) col = 7;
+        else if (1055 < mouseX && mouseX <= 1145) col = 8;
     
         if (row != -1 && col != -1 && row < plantPositions.length && col < plantPositions[0].length && plantPositions[row][col]==false) {
-            setXSpwan(397 + 90 * col);
+            setXSpwan(345 + 90 * col);
             setRowSpawn(row + 1); 
         }
     }

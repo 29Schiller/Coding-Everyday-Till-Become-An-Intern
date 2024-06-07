@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 public class Background {
     public BufferedImage background;
 
-    public Background(GamePanel gamePanel){
+    public Background(Playing gamePanel){
         getBackground();
     }
 

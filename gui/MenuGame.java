@@ -3,16 +3,16 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
 public class MenuGame {
+    private GameLoop gameLoop;
     private Image menuGame;
     private Image pvz_logo;
     private Image playButton;
     private Rectangle bounds;
-    private boolean CheckPlay=false;
-    public MenuGame(){
+    public MenuGame(GameLoop gameLoop){
+        this.gameLoop=gameLoop;
         bounds=new Rectangle(400,500,500,100);
         importImage();
     }
@@ -34,14 +34,10 @@ public class MenuGame {
     }
     public void handleMouseClick(int mouseX, int mouseY) {
         if(this.getBounds().contains(mouseX,mouseY)){
-            setCheckPlay(true);
+            gameLoop.getPlaying().resetGame();
+            GameScenes.setGameScenes(GameScenes.PLAYING); 
+            gameLoop.repaint(); 
         }
     }
-    public boolean isCheckPlay() {
-        return CheckPlay;
-    }
-    public void setCheckPlay(boolean checkPlay) {
-        CheckPlay = checkPlay;
-    }
-    
+    public void update(){}
 }

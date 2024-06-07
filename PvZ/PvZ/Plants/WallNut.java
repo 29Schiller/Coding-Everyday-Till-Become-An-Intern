@@ -2,15 +2,16 @@ package PvZ.Plants;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.util.List;
 import java.io.File;
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import PvZ.Zombies.Zombie;
 import Sun.SunDrop;
-
 public class WallNut extends Plants{
     private int timeIndex=0;
+    private int frameDelay = 3;
+    private int frameCounter = 0;
     private Image[] WallNutImage=new Image[12];
     public WallNut(int X, int row, boolean frozzen) {
         super(X, row, frozzen);
@@ -33,8 +34,17 @@ public class WallNut extends Plants{
     }
 
     @Override
-    public void renderPlantsAction(Graphics2D g2, ArrayList<Zombie> zombieList) {
-       g2.drawImage(WallNutImage[timeIndex], getX()-40, getY(),70,80, null);
-       timeIndex=(timeIndex+1)%WallNutImage.length;
-    }   
+    public void renderPlantsAction(Graphics2D g2,List<Zombie> zombieList) {
+        frameCounter++;
+        if (frameCounter >= frameDelay) {
+            frameCounter = 0;
+        g2.drawImage(WallNutImage[timeIndex], getX() +15, getY(), 70, 80, null);
+        timeIndex = (timeIndex + 1) % WallNutImage.length;
+        }
+        else{
+            g2.drawImage(WallNutImage[timeIndex], getX() +15, getY(), 70, 80, null);
+        }
+    }
+
+
 }

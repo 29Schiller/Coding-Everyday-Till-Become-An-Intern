@@ -1,8 +1,8 @@
 package PvZ.Lawn;
-
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-
+import java.util.Iterator;
+import java.util.List;
 import PvZ.Zombies.Zombie;
 
 public class LawnManager {
@@ -15,23 +15,34 @@ public class LawnManager {
         lawnsList.add(new Lawn(300, 4));
         lawnsList.add(new Lawn(300, 5));
     }
-    public void Action(ArrayList<Zombie> zombieList){
+    public synchronized void Action(List<Zombie> list){
         for (Lawn lawn : lawnsList) {
-            for (Zombie zombie : zombieList) {
+            for (Zombie zombie : list) {
                 lawn.CheckCollide(zombie);
             }
             if (lawn.isAction()==true) {
                 lawn.move();
-                for (Zombie zombie : zombieList) {
+                for (Zombie zombie : list) {
                     lawn.CheckCollide(zombie);
                 }
             }
         }
     }
-    public ArrayList<Lawn> getLawnsList() {
+    public void LawnDead(){
+        synchronized (lawnsList) {
+            Iterator<Lawn> iterator = lawnsList.iterator();
+            while (iterator.hasNext()) {
+                Lawn lawn = iterator.next();
+                if (lawn.getX()>=1300) {
+                    iterator.remove();
+                }
+            }
+        }
+    }
+    public synchronized ArrayList<Lawn> getLawnsList() {
         return lawnsList;
     }
-    public void render(Graphics2D g2){
+    public synchronized void render(Graphics2D g2){
         for(Lawn lawn:lawnsList){
             lawn.renderLawn(g2);
         }
