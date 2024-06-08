@@ -34,9 +34,9 @@ public class OptionPlants {
     public void setOccupied(int row, int col, boolean occupied) {plantPositions[row][col] = occupied;}
 
     public void importImage(){
-        try {peaChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Peashooter.png"));
-            wallNutChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Wallnut.png"));
-            sunFlowerChoose=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/OptionChoose/Sunflower.png"));
+        try {peaChoose=ImageIO.read(getClass().getResourceAsStream("/Plants/OptionChoose/Peashooter.png"));
+            wallNutChoose=ImageIO.read(getClass().getResourceAsStream("/Plants/OptionChoose/Wallnut.png"));
+            sunFlowerChoose=ImageIO.read(getClass().getResourceAsStream("/Plants/OptionChoose/Sunflower.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
 

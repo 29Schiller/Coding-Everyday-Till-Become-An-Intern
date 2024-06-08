@@ -58,9 +58,9 @@ public class OverGame {
 
     public void importImage() {
         try {
-            overScene = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/WinScence/GameOver.png"));
-            newGame = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/WinScence/GOver_NewGame_Button.png"));
-            exit = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/WinScence/GOver_ExitGame_Button.png"));
+            overScene = ImageIO.read(getClass().getResourceAsStream("/WinScence/GameOver.png"));
+            newGame = ImageIO.read(getClass().getResourceAsStream("/WinScence/GOver_NewGame_Button.png"));
+            exit = ImageIO.read(getClass().getResourceAsStream("/WinScence/GOver_ExitGame_Button.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

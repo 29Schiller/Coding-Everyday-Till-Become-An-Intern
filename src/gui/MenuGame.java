@@ -17,11 +17,11 @@ public class MenuGame {
         importImage();
     }
     public void importImage(){
-        try {menuGame=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/MenuGame/wallpaper.jpg"));
+        try {menuGame=ImageIO.read(getClass().getResourceAsStream("/MenuGame/wallpaper.jpg"));
         } catch (IOException e) {e.printStackTrace();}
-        try {pvz_logo=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/MenuGame/pvz_logo.png"));
+        try {pvz_logo=ImageIO.read(getClass().getResourceAsStream("/MenuGame/pvz_logo.png"));
         } catch (IOException e) {e.printStackTrace();}
-        try {playButton=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/MenuGame/PlayDemo.png"));
+        try {playButton=ImageIO.read(getClass().getResourceAsStream("/MenuGame/PlayDemo.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
     public void render(Graphics2D g2){

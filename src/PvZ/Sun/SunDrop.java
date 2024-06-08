@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.io.IOException;
 import java.awt.*;
-
+import game.audio.AudioGame;
 public class SunDrop extends JPanel {
     private ArrayList<Sun> SunList = new ArrayList<>();
     private ArrayList<Sun> sunsToRemoveByClicked = new ArrayList<>();
@@ -20,7 +20,7 @@ public class SunDrop extends JPanel {
     private int sunscore=1000;
     public SunDrop() {
         try {
-            this.storageImage = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Sun/SunCollected.png"));
+            this.storageImage = ImageIO.read(getClass().getResourceAsStream("/Sun/SunCollected.png"));
         } catch (IOException e) {
             e.printStackTrace();}}
 
@@ -37,16 +37,19 @@ public class SunDrop extends JPanel {
     public int getSunscore() {return sunscore;}
 
     public void setSunscore(int sunscore) {this.sunscore = sunscore;}
+
     public synchronized void spawnSun() {
         startX = 400 + random.nextInt(800);
         startY = 50 + random.nextInt(250);
         SunList.add(new Sun(startX, startY));}
 
     public synchronized void handleSunClick(int mouseX, int mouseY) {
+        sunsToRemoveByClicked.clear();
         for (Sun sun : SunList) {
             if (sun.getBounds().contains(mouseX, mouseY)) {
                 sunsToRemoveByClicked.add(sun);
                 sun.acceptCollected(true);
+                AudioGame.sunCollected();
                 sunscore+=25;}}
         SunList.removeAll(sunsToRemoveByClicked);
         repaint();

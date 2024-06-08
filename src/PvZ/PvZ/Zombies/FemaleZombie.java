@@ -26,13 +26,13 @@ public class FemaleZombie extends Zombie {
 
     public void importImage() {
         for (int i = 0; i < FemaleZombieMoveImage.length; i++) {
-            try {FemaleZombieMoveImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/FemaleZombie/Walk/Walk ("+(i+1)+").png"));
+            try {FemaleZombieMoveImage[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/FemaleZombie/Walk/Walk ("+(i+1)+").png"));
                 } catch (IOException e) {e.printStackTrace();}}
         for (int i = 0; i < FemaleZombieAttackImage.length; i++) {
-            try {FemaleZombieAttackImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/FemaleZombie/Attack/Attack ("+(i+1)+").png"));
+            try {FemaleZombieAttackImage[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/FemaleZombie/Attack/Attack ("+(i+1)+").png"));
                 } catch (IOException e) {e.printStackTrace();}}
         for (int i = 0; i < FemaleZombieDeadImage.length; i++) {
-            try {FemaleZombieDeadImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/FemaleZombie/Dead/Dead ("+(i+1)+").png"));
+            try {FemaleZombieDeadImage[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/FemaleZombie/Dead/Dead ("+(i+1)+").png"));
                 } catch (IOException e) {e.printStackTrace();}}
     }
 

@@ -15,7 +15,7 @@ public class Sun extends JPanel {
         this.X = X;
         this.Y = Y;
         try {
-            this.sunImage = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Sun/Sun 6.png"));
+            this.sunImage = ImageIO.read(getClass().getResourceAsStream("/Sun/Sun 6.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

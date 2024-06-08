@@ -34,12 +34,12 @@ public class Pea extends Plants {
     @Override
     public void importImage() {
         for (int i = 0; i < PeaNoActionImage.length; i++) {
-            try {PeaNoActionImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/Pea/PeaNoAction/" + (i + 1) + ".png"));
+            try {PeaNoActionImage[i] = ImageIO.read(getClass().getResourceAsStream("/Plants/Pea/PeaNoAction/" + (i + 1) + ".png"));
             } catch (IOException e) {e.printStackTrace();}}
         for (int i = 0; i < PeaActionImage.length; i++) {
-            try {PeaActionImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/Pea/PeaAction/" + (i + 1) + ".png"));
+            try {PeaActionImage[i] = ImageIO.read(getClass().getResourceAsStream("/Plants/Pea/PeaAction/" + (i + 1) + ".png"));
             } catch (IOException e) {e.printStackTrace();}}
-        try {PeaBulletImage = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/Pea/Bullet/Pea.png"));
+        try {PeaBulletImage = ImageIO.read(getClass().getResourceAsStream("/Plants/Pea/Bullet/Pea.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
 

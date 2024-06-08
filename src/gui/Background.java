@@ -12,7 +12,7 @@ public class Background {
     }
 
     public void getBackground(){
-        try {this.background=ImageIO.read(new File( "D:/Code/OOP/Project/res/Yard.jpg"));
+        try {this.background=ImageIO.read(getClass().getResourceAsStream("/Yard.jpg"));
         } catch (IOException e) {e.printStackTrace();}
     }
     

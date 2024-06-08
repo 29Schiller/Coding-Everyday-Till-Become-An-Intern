@@ -31,7 +31,7 @@ public class SunFlower extends Plants{
     @Override
     public void importImage() {
         for (int i=0; i<SunFlowerImage.length;i++){
-            try {SunFlowerImage[i]= ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/SunFlower/"+(i+1)+".png"));
+            try {SunFlowerImage[i]= ImageIO.read(getClass().getResourceAsStream("/Plants/SunFlower/"+(i+1)+".png"));
             } catch (IOException e) {e.printStackTrace();}}
     }
 

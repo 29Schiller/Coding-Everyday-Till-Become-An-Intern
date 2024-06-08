@@ -30,21 +30,21 @@ public class MaleZombie extends Zombie {
     public void importImage() {
         for (int i = 0; i < normalZombieMoveImage.length; i++) {
             try {
-                normalZombieMoveImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/MaleZombie/ZombieMove/Walk (" + (i + 1) + ").png"));
+                normalZombieMoveImage[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/MaleZombie/ZombieMove/Walk (" + (i + 1) + ").png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         for (int i = 0; i < normalZombieAttackImage.length; i++) {
             try {
-                normalZombieAttackImage[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/MaleZombie/ZombieAttack/Attack (" + (i + 1) + ").png"));
+                normalZombieAttackImage[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/MaleZombie/ZombieAttack/Attack (" + (i + 1) + ").png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         for (int i = 0; i < MaleZombieDead.length; i++) {
             try {
-                MaleZombieDead[i] = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/MaleZombie/ZombieDead/Dead (" + (i + 1) + ").png"));
+                MaleZombieDead[i] = ImageIO.read(getClass().getResourceAsStream("/Zombie/MaleZombie/ZombieDead/Dead (" + (i + 1) + ").png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

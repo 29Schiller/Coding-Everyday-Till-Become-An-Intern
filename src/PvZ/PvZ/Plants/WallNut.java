@@ -25,7 +25,7 @@ public class WallNut extends Plants{
     @Override
     public void importImage() {
         for(int i=0; i<WallNutImage.length;i++){
-            try {WallNutImage[i]=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/WallNut/"+(i+1)+".png"));
+            try {WallNutImage[i]=ImageIO.read(getClass().getResourceAsStream("/Plants/WallNut/"+(i+1)+".png"));
             } catch (IOException e) {e.printStackTrace();}}
     }
 

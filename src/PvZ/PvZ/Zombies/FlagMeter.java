@@ -17,9 +17,9 @@ public class FlagMeter {
     }
 
     public void importImage(){
-        try {FlagMeterFull=ImageIO.read(new File( "D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/Flag/FlagMeterFull.png"));
+        try {FlagMeterFull=ImageIO.read(getClass().getResourceAsStream("/Zombie/Flag/FlagMeterFull.png"));
         } catch (IOException e) {e.printStackTrace();}
-        try {FlagMeterEmpty=ImageIO.read(new File( "D:/Code/GitHub/OOP-Game-OcCho/res/Zombie/Flag/FlagMeterEmpty.png"));
+        try {FlagMeterEmpty=ImageIO.read(getClass().getResourceAsStream("/Zombie/Flag/FlagMeterEmpty.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
     

@@ -23,7 +23,7 @@ public class Lawn {
     }
     public void importImage() {
         try {
-            LawnImage = ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Lawn/Lawnmover.png"));
+            LawnImage = ImageIO.read(getClass().getResourceAsStream("/Lawn/Lawnmover.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -24,7 +24,7 @@ public class Shovel {
     public boolean isChoose() {return isChoose;}
     public void setChoose(boolean isChoose) {this.isChoose = isChoose;}
     public void importImage(){
-        try {shovelImage=ImageIO.read(new File("D:/Code/GitHub/OOP-Game-OcCho/res/Plants/Shovel/Shovel.png"));
+        try {shovelImage=ImageIO.read(getClass().getResourceAsStream("/Plants/Shovel/Shovel.png"));
         } catch (IOException e) {e.printStackTrace();}
     }
     public void render(Graphics2D g2){
