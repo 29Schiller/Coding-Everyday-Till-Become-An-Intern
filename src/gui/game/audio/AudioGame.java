@@ -38,8 +38,30 @@ public class AudioGame {
     
    
     public void play_Theme(){
-        inputAudio(8);
+        inputAudio(7);
         clips.start();
         clips.loop(clips.LOOP_CONTINUOUSLY);
     }
+
+    public void ZombieEat(){
+
+    }
+
+    public void ZombieStart(){
+
+    }
+
+    public void Win(){
+
+    }
+
+    public void Lose(){
+
+    }
+
+    public void sunCollected(){
+        inputAudio(3);
+        clips.start();
+    }
+
 }

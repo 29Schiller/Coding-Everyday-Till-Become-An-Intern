@@ -18,6 +18,7 @@ public class SunDrop extends JPanel {
     private Image storageImage;
     Random random = new Random();
     private int sunscore=1000;
+    public AudioGame sound = new AudioGame();
     public SunDrop() {
         try {
             this.storageImage = ImageIO.read(getClass().getResourceAsStream("/Sun/SunCollected.png"));
@@ -48,10 +49,12 @@ public class SunDrop extends JPanel {
         for (Sun sun : SunList) {
             if (sun.getBounds().contains(mouseX, mouseY)) {
                 sunsToRemoveByClicked.add(sun);
+                sound.sunCollected();
                 sun.acceptCollected(true);
                 sunscore+=25;}}
         SunList.removeAll(sunsToRemoveByClicked);
         repaint();
+
     }
 
     public synchronized void sunMove() {
