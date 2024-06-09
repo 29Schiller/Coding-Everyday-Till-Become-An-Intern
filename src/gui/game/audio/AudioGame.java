@@ -36,20 +36,11 @@ public class AudioGame {
         }
     }
     
-    public void play(){
-        if (clips != null) {
-            clips.start();
-        } else {
-            System.out.println("Error: Clips object is null");
-        }
-    }
-
-    public void loop(){
+   
+    public void play_Theme(){
+        inputAudio(8);
+        clips.start();
         clips.loop(clips.LOOP_CONTINUOUSLY);
-    }
-
-    public void stop(){
-        clips.stop();
     }
     /*
     public static void sunCollected(){
@@ -65,5 +56,5 @@ public class AudioGame {
         inputAudio(7);
         clips[7].start();
     }
-         */
+    */
 }

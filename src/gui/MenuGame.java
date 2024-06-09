@@ -18,7 +18,7 @@ public class MenuGame {
         this.gameLoop=gameLoop;
         bounds=new Rectangle(400,500,500,100);
         importImage();
-        playmusic(5);
+        sAudioGame.play_Theme();
     }
     public void importImage(){
         try {menuGame=ImageIO.read(getClass().getResourceAsStream("/MenuGame/wallpaper.jpg"));
@@ -43,9 +43,5 @@ public class MenuGame {
             gameLoop.repaint();
         }
     }
-    public void playmusic(int i){
-        sAudioGame.inputAudio(i);
-        sAudioGame.play();
-        sAudioGame.loop();
-    }
+
 }
