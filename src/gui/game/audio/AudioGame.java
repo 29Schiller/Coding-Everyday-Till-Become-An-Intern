@@ -38,23 +38,8 @@ public class AudioGame {
     
    
     public void play_Theme(){
-        inputAudio(7);
+        inputAudio(8);
         clips.start();
         clips.loop(clips.LOOP_CONTINUOUSLY);
     }
-    /*
-    public static void sunCollected(){
-        if (clips[3] != null) {
-        clips[3].setFramePosition(0);
-        clips[3].start();
-    } else {
-        System.err.println("Đoạn âm thanh cho sunCollected không được tải đúng cách.");
-        }
-    }
-
-    public static void main_theme(){
-        inputAudio(7);
-        clips[7].start();
-    }
-    */
 }
