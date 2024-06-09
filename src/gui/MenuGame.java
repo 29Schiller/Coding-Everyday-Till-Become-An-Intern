@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import game.audio.AudioGame;
+
 public class MenuGame {
     private GameLoop gameLoop;
     private Image menuGame;
@@ -15,6 +17,7 @@ public class MenuGame {
         this.gameLoop=gameLoop;
         bounds=new Rectangle(400,500,500,100);
         importImage();
+        
     }
     public void importImage(){
         try {menuGame=ImageIO.read(getClass().getResourceAsStream("/MenuGame/wallpaper.jpg"));
@@ -36,8 +39,9 @@ public class MenuGame {
         if(this.getBounds().contains(mouseX,mouseY)){
             gameLoop.getPlaying().resetGame();
             GameScenes.setGameScenes(GameScenes.PLAYING); 
-            gameLoop.repaint(); 
+            gameLoop.repaint();
+            
         }
     }
-    public void update(){}
+    public void update(){AudioGame.main_theme();}
 }

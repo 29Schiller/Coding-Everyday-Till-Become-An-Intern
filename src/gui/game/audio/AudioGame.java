@@ -39,6 +39,11 @@ public class AudioGame {
         clips[3].start();
     } else {
         System.err.println("Đoạn âm thanh cho sunCollected không được tải đúng cách.");
+        }
     }
-}
+
+    public static void main_theme(){
+        inputAudio(7);
+        clips[7].start();
+    }
 }
