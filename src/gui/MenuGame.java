@@ -4,7 +4,6 @@ import java.awt.Rectangle;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-
 import game.audio.AudioGame;
 
 public class MenuGame {
@@ -13,11 +12,13 @@ public class MenuGame {
     private Image pvz_logo;
     private Image playButton;
     private Rectangle bounds;
+    public AudioGame sAudioGame = new AudioGame();
+
     public MenuGame(GameLoop gameLoop){
         this.gameLoop=gameLoop;
         bounds=new Rectangle(400,500,500,100);
         importImage();
-        
+        playmusic(5);
     }
     public void importImage(){
         try {menuGame=ImageIO.read(getClass().getResourceAsStream("/MenuGame/wallpaper.jpg"));
@@ -40,8 +41,11 @@ public class MenuGame {
             gameLoop.getPlaying().resetGame();
             GameScenes.setGameScenes(GameScenes.PLAYING); 
             gameLoop.repaint();
-            
         }
     }
-    public void update(){AudioGame.main_theme();}
+    public void playmusic(int i){
+        sAudioGame.inputAudio(i);
+        sAudioGame.play();
+        sAudioGame.loop();
+    }
 }

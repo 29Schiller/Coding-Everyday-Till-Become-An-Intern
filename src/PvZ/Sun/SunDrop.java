@@ -49,7 +49,6 @@ public class SunDrop extends JPanel {
             if (sun.getBounds().contains(mouseX, mouseY)) {
                 sunsToRemoveByClicked.add(sun);
                 sun.acceptCollected(true);
-                AudioGame.sunCollected();
                 sunscore+=25;}}
         SunList.removeAll(sunsToRemoveByClicked);
         repaint();
