@@ -17,8 +17,8 @@ public class AudioGame {
             soundURL[4] = AudioGame.class.getResource("/Audio/Win.wav");
             soundURL[5] = AudioGame.class.getResource("/Audio/Lose.wav");
             soundURL[6] = AudioGame.class.getResource("/Audio/CrazyDaveScream.wav");
-            soundURL[7] = AudioGame.class.getResource("src\\res\\Audio\\main_theme.ogg");
-            soundURL[8] = AudioGame.class.getResource("/Audio/ZombieStart.ogg");
+            soundURL[7] = AudioGame.class.getResource("/Audio/Menu.wav");
+            soundURL[8] = AudioGame.class.getResource("/Audio/ZombieStart.wav");
         } catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Cannot open audio!"); 
@@ -38,7 +38,7 @@ public class AudioGame {
     
    
     public void play_Theme(){
-        inputAudio(8);
+        inputAudio(7);
         clips.start();
         clips.loop(clips.LOOP_CONTINUOUSLY);
     }
