@@ -1,7 +1,6 @@
 package Sun;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.IOException;

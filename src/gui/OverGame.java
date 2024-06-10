@@ -3,10 +3,8 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-
 import PvZ.Zombies.ZombieManager;
 public class OverGame {
     private Image overScene;

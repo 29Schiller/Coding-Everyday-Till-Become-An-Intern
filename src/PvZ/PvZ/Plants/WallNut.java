@@ -3,7 +3,6 @@ package PvZ.Plants;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.util.List;
-import java.io.File;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import PvZ.Zombies.Zombie;

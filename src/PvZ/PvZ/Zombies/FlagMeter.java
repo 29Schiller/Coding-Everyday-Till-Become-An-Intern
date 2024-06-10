@@ -1,18 +1,15 @@
 package PvZ.Zombies;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class FlagMeter {
     private Image FlagMeterFull;
     private Image FlagMeterEmpty;
-    private ZombieManager zombieManager;
     private int totalSpawn=ZombieManager.getLevel()*10;
     private int ratio=244/totalSpawn;
-    public FlagMeter(ZombieManager zombieManager){
-        zombieManager=new ZombieManager();
+    public FlagMeter(){
         importImage();
     }
 

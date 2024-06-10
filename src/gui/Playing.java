@@ -3,9 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JPanel;
-
 import PvZ.Lawn.LawnManager;
 import PvZ.Plants.OptionPlants;
 import PvZ.Plants.PlantsManager;
@@ -45,7 +43,7 @@ public class Playing extends JPanel {
         zombieManager = new ZombieManager();
         ZombieManager.resetStaticVariables();
         bg = new Background(this);
-        flag=new FlagMeter(zombieManager);
+        flag=new FlagMeter();
         shovel=new Shovel(plantsManager,optionPlants);
         random = new Random();
         gameEnded = false;
