@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import game.audio.AudioGame;
+
 import javax.swing.JPanel;
 import PvZ.Lawn.LawnManager;
 import PvZ.Plants.OptionPlants;
@@ -30,6 +32,9 @@ public class Playing extends JPanel {
     private Timer zombieSpawnTimer;
     private Timer zombieActionTimer;
     private boolean gameEnded = false;
+
+    public AudioGame sound = new AudioGame();
+
     public Playing(GameLoop gameLoop) {
         this.gameLoop = gameLoop;
         initializeGameComponents();
@@ -47,6 +52,7 @@ public class Playing extends JPanel {
         shovel=new Shovel(plantsManager,optionPlants);
         random = new Random();
         gameEnded = false;
+
     }
 
     public void stopGame() {
@@ -103,6 +109,7 @@ public class Playing extends JPanel {
                 shovel.RemovePlant(mouseX, mouseY);
             }
         }
+
     }
 
     // Game Action
@@ -128,6 +135,7 @@ public class Playing extends JPanel {
                 repaint();
             }
         }, 0, 125);
+        
     }
 
     public void LawnAction() {
@@ -192,4 +200,5 @@ public class Playing extends JPanel {
         sunDrop.drawStorage(g2);
         zombieManager.render(g2);
     }
+    
 }

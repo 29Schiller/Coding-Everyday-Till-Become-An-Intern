@@ -6,9 +6,9 @@ import javax.swing.*;
 import java.net.URL;
 
 public class AudioGame {
-    private static Clip[] clips = new Clip[9];
+    private  Clip clips ;
     static URL soundURL[] = new URL[9];
-    static {
+    public AudioGame() {
         try {
             soundURL[0] = AudioGame.class.getResource("/Audio/tapPlantBar.wav");
             soundURL[1] = AudioGame.class.getResource("/Audio/ZombieEat.wav");
@@ -17,28 +17,51 @@ public class AudioGame {
             soundURL[4] = AudioGame.class.getResource("/Audio/Win.wav");
             soundURL[5] = AudioGame.class.getResource("/Audio/Lose.wav");
             soundURL[6] = AudioGame.class.getResource("/Audio/CrazyDaveScream.wav");
-            soundURL[7] = AudioGame.class.getResource("/Audio/main_theme.ogg");
-            soundURL[8] = AudioGame.class.getResource("/Audio/ZombieStart.ogg");
+            soundURL[7] = AudioGame.class.getResource("/Audio/main_theme.wav");
+            soundURL[8] = AudioGame.class.getResource("/Audio/ZombieStart.wav");
         } catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Cannot open audio!"); 
         }
     }
-    public static void inputAudio(int i){
+   
+    public void inputAudio(int i){
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundURL[i]);
-            clips[i] = AudioSystem.getClip();
-            clips[i].open(audioInputStream);
-        } catch (Exception e){
-
+            clips = AudioSystem.getClip();
+            clips.open(audioInputStream);
+        } catch (Exception e) {
+            System.out.println("Error loading audio file: " + e.getMessage());
+            clips = null; // Set clips to null if an exception occurs
         }
     }
-    public static void sunCollected(){
-        if (clips[3] != null) {
-        clips[3].setFramePosition(0);
-        clips[3].start();
-    } else {
-        System.err.println("Đoạn âm thanh cho sunCollected không được tải đúng cách.");
+    
+   
+    public void play_Theme(){
+        inputAudio(7);
+        clips.start();
+        clips.loop(clips.LOOP_CONTINUOUSLY);
     }
-}
+
+    public void ZombieEat(){
+
+    }
+
+    public void ZombieStart(){
+
+    }
+
+    public void Win(){
+
+    }
+
+    public void Lose(){
+
+    }
+
+    public void sunCollected(){
+        inputAudio(3);
+        clips.start();
+    }
+
 }
