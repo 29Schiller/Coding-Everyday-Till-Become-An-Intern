@@ -12,7 +12,9 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 
 ## Object 
 ● The code becomes more transparent, easily understandable, and concise.
+
 ● The project represents a cohesive logical system, achieved by combining numerous related classes.
+
 ● Each class contains multiple methods that perform distinct behaviors unique to that class.
 
 
