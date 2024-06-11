@@ -32,26 +32,27 @@ After placing a plant, a plant is locked for sometime before it can be planted a
 The shovel can be used to remove a plant from the lawn.
 Sound effects have been added for all interactions on the lawn to enhance the experience.
 The users can also choose between the day and the night mode. Unlike the day mode, no sun tokens fall from the sky in the night mode, and sunflowers are the only source of sun tokens.
-Design Patterns
+**Design Patterns**
 Singleton: For the database and for shovel feature, as we need only one reference through out the game.
 Iterator - To ensure that Plant, Zombie and Lawnmower lists are accessed in a synchronized way.
 Facade for menu based implementation
-Screenshots from the game
+**Screenshots from the game**
 alt_text alt_text alt_text alt_text alt_text alt_text
 
-How To play
-Executing the JAR File
+**How To play**
+**Executing the JAR File**
 To play the game, the following steps can be followed:
 
-Clone this repository using the command: git clone https://github.com/BhavyaC16/Plants-Vs-Zombies.git
-cd into the directory Plant-Vs-Zombies-JAR using: cd Plants-Vs-Zombies/Plant-Vs-Zombies-JAR
-Download the JavaFX SDK 11.0.2 from here, depending on your platform. Unzip and situate the folder javafx-sdk-11.0.2 in Plants-Vs-Zombies/Plant-Vs-Zombies-JAR
-Execute the command ./PlantsVsZombies.sh . Alternatively, execute the command java --module-path ~/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media -jar PlantVsZombies.jar
+1. Clone this repository using the command: git clone https://github.com/BhavyaC16/Plants-Vs-Zombies.git
+2. cd into the directory Plant-Vs-Zombies-JAR using: cd Plants-Vs-Zombies/Plant-Vs-Zombies-JAR
+3. Download the JavaFX SDK 11.0.2 from here, depending on your platform. Unzip and situate the folder javafx-sdk-11.0.2 in Plants-Vs-Zombies/Plant-Vs-Zombies-JAR
+4. Execute the command ./PlantsVsZombies.sh . Alternatively, execute the command java --module-path ~/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media -jar PlantVsZombies.jar
 (Note: --module-path specifies the path to your JavaFX SDK 11 lib folder. The variable LIB_PATH in PlantsVsZombies.sh holds the path to the lib folder, and can be updated accordingly.)
-Code and assets
+
+**Code and assets**
 Path to code: PlantVsZombies/src/sample
 Path to Images and sounds: PlantVsZombies/src/sample/assets
 
-License
-GNU General Public License v3.0
+**License**
+**GNU General Public License v3.0**
 You may copy, distribute and modify the software as long as you track changes/dates in source files. Any modifications to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build & install instructions.
