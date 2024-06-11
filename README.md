@@ -34,5 +34,13 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 
 ## Acknowledgements
 ●  Developed by HCMIU students.
+
 ●  Inspired by the original Plants vs Zombies game by PopCap Games.
+
+●  We want to express our sincerest thanks to our lecturers and the people who have helped us to achieve this project's goals:
+
++ Dr. Tran Thanh Tung
+  
++ MSc. Nguyen Thanh Nghia
+
 
