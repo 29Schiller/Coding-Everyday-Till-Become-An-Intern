@@ -1,7 +1,5 @@
 # Plants-Vs-Zombies 🌱🌵 Vs 🧟‍♂️🧟‍♀️
 ## Details
-**Created by:
-[Bhavya Chopra](https://www.github.com/BhavyaC16) and [Sonali Singhal](https://www.github.com/SonaliSinghal)**
 
 This is a clone of the strategy video game, [Plants vs. Zombies](https://en.wikipedia.org/wiki/Plants_vs._Zombies), originally developed by PopCap Games.
 
