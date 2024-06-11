@@ -31,7 +31,8 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 ## Implementations 
 
 ## Screenshots from the game
-src/Resource/Yard.jpg
+https://github.com/29Schiller/OOP_HCMIU_PLantVsZombies/blob/9a5dd1918a7a837c26afadb7dd7e151b427576ec/src/Resource/Yard.jpg
+
 ## Acknowledgements
 ●  Developed by HCMIU students.
 
