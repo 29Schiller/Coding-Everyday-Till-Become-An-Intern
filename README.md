@@ -10,6 +10,8 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
   + Nguyễn Hải Phú
   + Hà Anh Khoa
 
+## Implementations 
+
 ## Object 
 ● The code becomes more transparent, easily understandable, and concise.
 
@@ -28,7 +30,6 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 
 ● Zombie Variations: Different types of zombies have varying defense and attack points, increasing in difficulty with each level.
 
-## Implementations 
 
 ## Screenshots from the game
 
