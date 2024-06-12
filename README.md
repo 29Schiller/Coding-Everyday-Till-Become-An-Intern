@@ -18,15 +18,16 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 ● Each class contains multiple methods that perform distinct behaviors unique to that class.
 
 ## Rules of the Game
-● Planting and Defense: Players must plant various types of plants to prevent zombies from reaching the house.
+● The main character you will embody is a manager, the man who can manage to deploy or remove the plant
+● Your mission is to eliminate all the zombies approaching to defend our house 
+● You only have 1 life and 6 lawn mowers as the last citadels to help you defend from the Zombie horde
+● When the 6 lawn mowers have been activated and removed, there will be nothing that can stop the zombies anymore when they reach the house. If they succeed, your “castle” will collapse and you will lose 
+● There are 3 types of plants for you to deploy and 2 types of zombies fighting against the player:
++ Plants: Pea-Shooter, Sunflower and Walnut
++ Zombies: Male zombies and Female zombies
++ When you defeat the zombies, the progress bar will go up and when it is full, you will win
++ When the player loses, the game will go to the Game Over State and you can choose to restart from the beginning
 
-● Sun Tokens: Used as in-game currency to buy plants, falling from the sky every few seconds in the day mode.
-
-● Waiting Time: Each plant has a cooldown period before it can be planted again.
-
-● Lawnmowers: Act as a last line of defense, activating once zombies reach the house, but can be used only once per row.
-
-● Zombie Variations: Different types of zombies have varying defense and attack points, increasing in difficulty with each level.
 
 
 ## Screenshots from the game
