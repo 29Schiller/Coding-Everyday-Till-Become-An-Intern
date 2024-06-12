@@ -19,9 +19,13 @@ __Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game develop
 
 ## Rules of the Game
 ● The main character you will embody is a manager, the man who can manage to deploy or remove the plant
+
 ● Your mission is to eliminate all the zombies approaching to defend our house 
+
 ● You only have 1 life and 6 lawn mowers as the last citadels to help you defend from the Zombie horde
-● When the 6 lawn mowers have been activated and removed, there will be nothing that can stop the zombies anymore when they reach the house. If they succeed, your “castle” will collapse and you will lose 
+
+● When the 6 lawn mowers have been activated and removed, there will be nothing that can stop the zombies anymore when they reach the house. If they succeed, your “castle” will collapse and you will lose
+
 ● There are 3 types of plants for you to deploy and 2 types of zombies fighting against the player:
 + Plants: Pea-Shooter, Sunflower and Walnut
 + Zombies: Male zombies and Female zombies
