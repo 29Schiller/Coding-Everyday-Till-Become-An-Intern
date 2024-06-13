@@ -56,6 +56,6 @@ The project goal is to create a game based on 2D game concepts and have a confer
 
 + Dr. Tran Thanh Tung
   
-+ MSc. Nguyen Thanh Nghia
++ MSc. Nguyen Trung Nghia
 
 
