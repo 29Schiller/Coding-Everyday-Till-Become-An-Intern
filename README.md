@@ -1,7 +1,8 @@
 # Object-Oriented-Programming-HCMIU
 ___Game project of OOP class___  
 __Game name__: Plants vs Zombies  
-__Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game developed and originally published by a group of HCMIU students. The game involves homeowners who use a variety of different plants to prevent waves of zombies from reaching the house.
+__Plants vs Zombies__ (abbreviated as PvZ) is a tower defense video game developed and originally published by a group of HCMIU students. The game involves homeowners who use a variety of different plants to prevent waves of zombies from reaching the house. When a horde of zombies begins to attempt to approach the house along parallel lanes, the player must protect the house by planting trees in the lane to shoot bullets that kill the zombies or harm them. Players collect a currency called "sun" to buy plants. If a zombie reaches the house by any lane, the level is considered failed and the player will have to restart that level. In this undertaking, our team has remade this game to bring players a new version of Plants vs Zombies with many changes and improvements.
+
 
 # Dev
   + [Nguyễn Minh Đạt](https://github.com/29Schiller) 
