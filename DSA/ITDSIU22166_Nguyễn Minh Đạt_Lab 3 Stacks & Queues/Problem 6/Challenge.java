@@ -77,20 +77,13 @@ public class Challenge {
             D.pushBack(Q.dequeue());
         }
         for (int i = 0 ; i < 3 ; i++) { 
+            Q.enqueue(D.popBack());
+        }
+        while (!Q.isEmpty()){
             D.pushFront(Q.dequeue());
-        }
-        D.pushFront(Q.dequeue());
-        D.pushBack(Q.dequeue());
-
-        for (int i = 0 ; i < 4 ; i++) { 
-            Q.enqueue(D.popFront());
-        }
-        for (int i = 0 ; i < 4 ; i++) { 
-            D.pushBack(Q.dequeue());
         }
         System.out.println("Deque D: " + D.getDeque()); 
         System.out.println("Queue Q: " + Q.getQueue());
-
         System.out.println("+-----+Extended Problem+-----+");
         Deque A = new Deque();
         Queue B = new Queue();

@@ -62,9 +62,44 @@ class LinkList
       System.out.println("");
       }
 // -------------------------------------------------------------
-   }  // end class LinkList
+// -------------------------------------------------------------
+   public Link getFirst(){
+      return first;
+   }
+
+   // -------------------------------------------------------------
+   public Link getLast(){
+      if(isEmpty()){
+         return null;
+      }
+
+      Link current = first;
+      while(current.next != null){
+         current = current.next;
+      }
+      return current;
+   }
+   //--------------------------------------------------------------
+   @Override
+   public String toString(){
+      if (isEmpty()) {
+         return "[]";
+      }
+      StringBuilder sb = new StringBuilder("[");
+      Link current = first;
+      while(current != null){
+         sb.append("{").append(current.iData).append(", ").append(current.dData).append("}");
+         if(current.next != null){
+            sb.append(", ");
+         }
+         current = current.next;
+      }
+      sb.append("]");
+      return sb.toString();
+   }
+}  // end class LinkList
 ////////////////////////////////////////////////////////////////
-class LinkListApp
+public class LinkListApp
    {
    public static void main(String[] args)
       {
@@ -76,6 +111,14 @@ class LinkListApp
       theList.insertFirst(88, 8.99);
 
       theList.displayList();              // display list
+      System.out.println("List toString: " + theList);
+
+      if(theList.getFirst() != null){
+         System.out.println("First Link: " + theList.getFirst().iData + ", " + theList.getFirst().dData);
+     }
+     if(theList.getLast() != null){
+         System.out.println("Last Link: " + theList.getLast().iData + ", " + theList.getLast().dData);
+     }
 
       while( !theList.isEmpty() )         // until it's empty,
          {
@@ -84,7 +127,10 @@ class LinkListApp
          aLink.displayLink();
          System.out.println("");
          }
-      theList.displayList();              // display list
+      theList.displayList();           // display list
+      System.out.println("List toString: " + theList);
+      System.out.println("First link of empty list: " + theList.getFirst());
+      System.out.println("Last link of empty list: " + theList.getLast());
       }  // end main()
    }  // end class LinkListApp
 ////////////////////////////////////////////////////////////////

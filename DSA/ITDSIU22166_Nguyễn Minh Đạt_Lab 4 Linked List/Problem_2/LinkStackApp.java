@@ -16,7 +16,7 @@ class Link
 ////////////////////////////////////////////////////////////////
 class LinkList
    {
-   private Link first;            // ref to first item on list
+   public Link first;            // ref to first item on list
 // -------------------------------------------------------------
    public LinkList()              // constructor
       { first = null; }           // no items on list yet
@@ -49,7 +49,26 @@ class LinkList
       System.out.println("");
       }
 // -------------------------------------------------------------
-   }  // end class LinkList
+   public void reversedList(){
+      LinkStack stack = new LinkStack();
+      LinkStack reversedStack = new LinkStack();
+      LinkList reversedList = new LinkList();
+      Link current = first;
+
+      while (current != null) {
+         stack.push(current.dData);
+         current = current.next;
+      }     
+      while (!stack.isEmpty()) {
+         reversedStack.push(stack.pop());
+      }     
+      while (!reversedStack.isEmpty()) {
+         reversedList.insertFirst(reversedStack.pop());
+      }
+      System.out.print("Reversed List: ");
+      reversedList.displayList();
+   }
+}  // end class LinkList
 ////////////////////////////////////////////////////////////////
 class LinkStack
    {
@@ -81,12 +100,10 @@ class LinkStack
       theList.displayList();
       }
 //--------------------------------------------------------------
-   }  // end class LinkStack
+}  // end class LinkStack
 ////////////////////////////////////////////////////////////////
-public class LinkStackApp
-   {
-   public static void main(String[] args)
-      {
+public class LinkStackApp{   
+   public static void main(String[] args){
       LinkStack theStack = new LinkStack(); // make stack
 
       theStack.push(20);                    // push items
@@ -103,6 +120,18 @@ public class LinkStackApp
       theStack.pop();
 
       theStack.displayStack();              // display stack
-      }  // end main()
-   }  // end class LinkStackApp
+
+      System.out.println("---------------+Reversed List by Stack+-----------------");
+      LinkList originalList = new LinkList();
+      originalList.insertFirst(5);
+      originalList.insertFirst(4);
+      originalList.insertFirst(3);
+      originalList.insertFirst(2);
+      originalList.insertFirst(1);
+
+      System.out.print("Original List: ");
+      originalList.displayList();
+      originalList.reversedList();
+   }  // end main()
+}  // end class LinkStackApp
 ////////////////////////////////////////////////////////////////
